@@ -6,8 +6,8 @@ public class Expo {
     Participante[] plantaBaja = new Participante[3];
 	
     
-    int indiceAlta = 0;
-    int indiceBaja = 0;
+    public int indiceAlta = 0;
+    public int indiceBaja = 0;
 
     
     public boolean agregarParticipante(Participante participante) {
@@ -26,7 +26,24 @@ public class Expo {
      
         else {
             return false; 
-        }
+        }   
+    } 
+    
+    
+    public String mostrarNombreParticipantes() {
+    	
+    	StringBuilder nombres = new StringBuilder();
+    	for(int i=0;i< plantaAlta.length;i++) {
+    		
+    		Participante part = plantaAlta[i];
+    		nombres.append(part.getNombre());
+    		
+    		if (i < plantaAlta.length - 1) {
+                nombres.append(", ");
+            }
+    	}
+    	return nombres.toString();
+    	
     }
     
 }
